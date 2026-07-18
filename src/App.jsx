@@ -1,6 +1,5 @@
-"use client";
-
 import { useEffect, useState } from "react";
+import { getProjects, saveInquiry } from "./database";
 
 const projects = [
   { id: "01", title: "Noma / Field Notes", type: "Brand system · Digital", year: "2025", className: "project-blue", mark: "N/F", note: "A living identity for a new kind of travel journal." },
@@ -22,7 +21,7 @@ export default function Home() {
     const update = () => setTime(new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Africa/Freetown", hour12: false }).format(new Date()));
     update();
     const interval = setInterval(update, 30000);
-    fetch("/api/projects").then((response) => response.ok ? response.json() : Promise.reject()).then(setProjectList).catch(() => {});
+    getProjects().then(setProjectList).catch(() => {});
     return () => clearInterval(interval);
   }, []);
 
@@ -30,15 +29,11 @@ export default function Home() {
     event.preventDefault();
     setFormStatus("sending");
     const form = event.currentTarget;
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(Object.fromEntries(new FormData(form)))
-    });
-    if (response.ok) {
+    try {
+      await saveInquiry(Object.fromEntries(new FormData(form)));
       form.reset();
       setFormStatus("sent");
-    } else {
+    } catch {
       setFormStatus("error");
     }
   }
