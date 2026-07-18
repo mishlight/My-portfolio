@@ -7,3 +7,7 @@ staticfiles/
 __pycache__/
 *.py[cod]
 .env
+.venv/
+.pip-temp/
+.wheels/
+.vendor/
