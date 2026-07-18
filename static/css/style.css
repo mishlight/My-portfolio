@@ -126,6 +126,9 @@ footer { background: var(--coral); padding: 80px 4vw 35px; min-height: 82vh; dis
 .contact-form input:focus, .contact-form textarea:focus { border-color: var(--paper); }
 .contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(23,23,19,.55); }
 .form-error { font: .65rem "DM Mono"; margin: 0; }
+.form-message { max-width: 620px; margin: 35px 0 -30px; padding: 14px 18px; border: 1px solid rgba(23,23,19,.4); font: .7rem "DM Mono"; text-transform: uppercase; }
+.form-message.success { background: var(--acid); }
+.errorlist { margin: 6px 0 0; padding: 0; list-style: none; font: .6rem "DM Mono"; }
 .footer-bottom { border-top: 1px solid rgba(23,23,19,.3); padding-top: 25px; display: grid; grid-template-columns: 1fr 1fr 1fr; font: .62rem "DM Mono"; text-transform: uppercase; }
 .footer-bottom div { display: flex; gap: 25px; }
 .footer-bottom span { text-align: center; }

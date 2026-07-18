@@ -2,3 +2,8 @@
 node_modules
 out
 *.log
+db.sqlite3
+staticfiles/
+__pycache__/
+*.py[cod]
+.env

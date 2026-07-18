@@ -1,0 +1,107 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Mishael Sellu — software developer, computer science student, and researcher in Sierra Leone.">
+  <title>Mishael Sellu — Software Developer</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<main>
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="#top" aria-label="Mishael Sellu, home">MS<span>®</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle menu"><span>MENU</span><i></i></button>
+    <div class="nav-links">
+      <a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </div>
+    <a href="mailto:mishaelsellu68@gmail.com" class="available"><span></span> Available for projects</a>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-meta"><span>Software developer</span><span>Freetown · <b id="local-time">—</b></span></div>
+    <div class="hero-photo">
+      <img src="{% static 'images/mishael-full.jpg' %}" alt="Mishael Sellu in formal attire">
+      <span>Freetown, Sierra Leone</span>
+    </div>
+    <h1><span>Building</span><span class="outline">bold ideas</span><span class="offset">with <em>purpose.</em></span></h1>
+    <div class="hero-bottom">
+      <p>I’m Mishael — a computer science student and developer building practical web, mobile, and database solutions.</p>
+      <a class="round-link" href="#work" aria-label="See selected work"><span class="arrow diagonal">→</span></a>
+    </div>
+    <div class="scroll-line"><span>Scroll to explore</span><i></i></div>
+  </header>
+
+  <section class="work" id="work">
+    <div class="section-kicker"><span>(01)</span><span>Selected work</span><span>2024—2026</span></div>
+    <div class="projects">
+      {% for project in projects %}
+      <article class="project">
+        <a href="{{ project.live_url|default:'https://github.com/mishlight' }}" class="project-visual {{ project.color }}" target="_blank" rel="noreferrer" aria-label="View {{ project.title }}">
+          <div class="project-index">{{ forloop.counter|stringformat:"02d" }}</div>
+          <div class="project-mark">{{ project.mark }}</div>
+          <div class="project-caption">{{ project.description }}</div>
+          <div class="project-arrow"><span class="arrow diagonal">→</span></div>
+        </a>
+        <div class="project-info"><h2>{{ project.title }}</h2><p>{{ project.technology }}</p><span>{{ project.year }}</span></div>
+      </article>
+      {% empty %}
+      <p>Projects are being prepared.</p>
+      {% endfor %}
+    </div>
+    <a href="https://github.com/mishlight" target="_blank" rel="noreferrer" class="text-link">Visit my GitHub <span class="arrow">→</span></a>
+  </section>
+
+  <section class="about" id="about">
+    <div class="section-kicker light"><span>(02)</span><span>About me</span><span>Build for impact</span></div>
+    <div class="about-grid">
+      <div class="portrait photo-portrait">
+        <img src="{% static 'images/mishael-portrait.jpg' %}" alt="Mishael Sellu wearing a black suit">
+        <p>Curious by nature.<br>Precise by practice.</p>
+      </div>
+      <div class="about-copy">
+        <h2>Technology should<br>solve a real <em>problem.</em></h2>
+        <p>I’m studying Computer Science at Central University, with an expected graduation in 2027. I build full-stack web and mobile applications, design databases, and bring field research experience from Innovations for Poverty Action in Sierra Leone.</p>
+        <div class="services">
+          <h3>What I do</h3>
+          <ul>
+            <li><span>01</span>Full-stack web development</li>
+            <li><span>02</span>React Native mobile apps</li>
+            <li><span>03</span>Database design & APIs</li>
+            <li><span>04</span>Research & data collection</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="manifesto">
+    <p>Practical ideas. Reliable technology. Meaningful impact.</p>
+    <div class="marquee"><span>BUILD · LEARN · IMPROVE ✦ BUILD · LEARN · IMPROVE ✦&nbsp;</span><span aria-hidden="true">BUILD · LEARN · IMPROVE ✦ BUILD · LEARN · IMPROVE ✦</span></div>
+  </section>
+
+  <footer id="contact">
+    <div class="section-kicker footer-kicker"><span>(03)</span><span>Let’s talk</span><span>Open for select projects</span></div>
+    <div class="footer-main">
+      <div>
+        <h2>Have an idea?<br><em>Let’s make it move.</em></h2>
+        {% for message in messages %}<p class="form-message {{ message.tags }}" role="status">{{ message }}</p>{% endfor %}
+        <form class="contact-form" method="post">
+          {% csrf_token %}
+          <label><span>Your name</span>{{ form.name }}{{ form.name.errors }}</label>
+          <label><span>Email address</span>{{ form.email }}{{ form.email.errors }}</label>
+          <label class="wide"><span>Tell me about the project</span>{{ form.message }}{{ form.message.errors }}</label>
+          <button class="contact-button" type="submit">Start a conversation <span class="arrow diagonal">→</span></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div><a href="https://github.com/mishlight" target="_blank" rel="noreferrer">GitHub</a><a href="mailto:mishaelsellu68@gmail.com">Email</a></div>
+      <span>© 2026 Mishael Sellu</span><a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+</main>
+<script src="{% static 'js/site.js' %}"></script>
+</body>
+</html>
