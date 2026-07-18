@@ -1,7 +1,7 @@
 import initSqlJs from "sql.js";
 import wasmUrl from "sql.js/dist/sql-wasm.wasm?url";
 
-const storageKey = "alex-morgan-portfolio-sqlite";
+const storageKey = "mishael-sellu-portfolio-sqlite-v2";
 
 function fromBase64(value) {
   return Uint8Array.from(atob(value), (character) => character.charCodeAt(0));
@@ -30,9 +30,9 @@ const databasePromise = (async () => {
   const total = db.exec("SELECT COUNT(*) FROM projects")[0]?.values[0]?.[0] || 0;
   if (!total) {
     const rows = [
-      [1, "Noma / Field Notes", "Brand system · Digital", "2025", "project-blue", "N/F", "A living identity for a new kind of travel journal.", 1],
-      [2, "Forma Objects", "Art direction · Commerce", "2024", "project-coral", "F.", "Turning everyday furniture into objects of desire.", 2],
-      [3, "Otherworld Radio", "Product · Web experience", "2025", "project-dark", "(( O ))", "A tactile listening room for independent sound.", 3]
+      [1, "YUMMY Restaurant", "Django · SQLite · JavaScript", "2025", "project-blue", "Y.", "Full-stack ordering with authentication, payments, tracking and a custom admin dashboard.", 1],
+      [2, "UniConnect", "Next.js · Django REST · PostgreSQL", "2025", "project-coral", "U/C", "A real-time university social and study platform built for connection and collaboration.", 2],
+      [3, "FreshBasket", "React Native · Expo Router", "2025", "project-dark", "F/B", "A responsive grocery shopping experience with search, favourites, cart and profiles.", 3]
     ];
     rows.forEach((row) => db.run("INSERT INTO projects VALUES (?, ?, ?, ?, ?, ?, ?, ?)", row));
     localStorage.setItem(storageKey, toBase64(db.export()));
