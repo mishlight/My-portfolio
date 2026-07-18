@@ -1,5 +1,7 @@
+ "use client";
+
 import { useEffect, useState } from "react";
-import { getProjects, saveInquiry } from "./database";
+import { getProjects, saveInquiry } from "../src/database";
 
 const projects = [
   { id: "01", title: "Noma / Field Notes", type: "Brand system · Digital", year: "2025", className: "project-blue", mark: "N/F", note: "A living identity for a new kind of travel journal." },
