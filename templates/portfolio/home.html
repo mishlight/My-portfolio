@@ -4,102 +4,124 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Mishael Sellu — software developer, computer science student, and researcher in Sierra Leone.">
+  <meta name="description" content="Mishael Sellu — software developer creating thoughtful web, mobile, and data-driven products.">
   <title>Mishael Sellu — Software Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<main>
-  <nav class="nav" aria-label="Main navigation">
-    <a class="brand" href="#top" aria-label="Mishael Sellu, home">MS<span>®</span></a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle menu"><span>MENU</span><i></i></button>
-    <div class="nav-links">
-      <a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
-    </div>
-    <a href="mailto:mishaelsellu68@gmail.com" class="available"><span></span> Available for projects</a>
-  </nav>
+<div class="noise"></div>
+<nav class="nav">
+  <a class="brand" href="#top"><span>MS</span> Mishael Sellu</a>
+  <div class="nav-links"><a href="#work">Work</a><a href="#about">About</a><a href="#journey">Journey</a></div>
+  <a class="nav-cta" href="#contact"><i></i> Let’s talk <span>↗</span></a>
+  <button class="menu-toggle" type="button" aria-expanded="false"><span>Menu</span><i></i></button>
+</nav>
 
+<main>
   <header class="hero" id="top">
-    <div class="hero-meta"><span>Software developer</span><span>Freetown · <b id="local-time">—</b></span></div>
-    <div class="hero-photo">
-      <img src="{% static 'images/mishael-full.jpg' %}" alt="Mishael Sellu in formal attire">
-      <span>Freetown, Sierra Leone</span>
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="status-dot"></span> Available for opportunities · Freetown</div>
+      <h1>I turn complex<br>ideas into <em>useful</em><br>digital products.</h1>
+      <p class="hero-intro">Computer Science student and full-stack developer crafting reliable web, mobile, and database experiences—with curiosity, clarity, and purpose.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#work">Explore my work <span>↓</span></a>
+        <a class="button ghost" href="mailto:mishaelsellu68@gmail.com">Email me <span>↗</span></a>
+      </div>
+      <div class="hero-proof">
+        <div><strong>06+</strong><span>Products built</span></div>
+        <div><strong>10+</strong><span>Technologies</span></div>
+        <div><strong>2027</strong><span>Graduating</span></div>
+      </div>
     </div>
-    <h1><span>Building</span><span class="outline">bold ideas</span><span class="offset">with <em>purpose.</em></span></h1>
-    <div class="hero-bottom">
-      <p>I’m Mishael — a computer science student and developer building practical web, mobile, and database solutions.</p>
-      <a class="round-link" href="#work" aria-label="See selected work"><span class="arrow diagonal">→</span></a>
+    <div class="hero-visual">
+      <div class="portrait-frame"><img src="{% static 'images/mishael-full.jpg' %}" alt="Mishael Sellu in formal attire"></div>
+      <div class="code-card"><span>Currently exploring</span><strong>AI · Cybersecurity ·<br>Technology for impact</strong></div>
+      <div class="location-card"><span id="local-time">—</span><small>GMT · Freetown</small></div>
+      <svg class="orbit" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46"/><circle cx="50" cy="4" r="3"/></svg>
     </div>
-    <div class="scroll-line"><span>Scroll to explore</span><i></i></div>
   </header>
 
-  <section class="work" id="work">
-    <div class="section-kicker"><span>(01)</span><span>Selected work</span><span>2024—2026</span></div>
-    <div class="projects">
+  <section class="logo-strip" aria-label="Technology stack">
+    <span>DJANGO</span><i></i><span>REACT NATIVE</span><i></i><span>POSTGRESQL</span><i></i><span>PYTHON</span><i></i><span>JAVASCRIPT</span><i></i><span>FIGMA</span>
+  </section>
+
+  <section class="work section" id="work">
+    <div class="section-heading">
+      <div><span class="section-number">01 / PROJECTS</span><h2>Selected work</h2></div>
+      <p>Practical products designed around real people, real workflows, and dependable technology.</p>
+    </div>
+    <div class="project-grid">
       {% for project in projects %}
-      <article class="project">
-        <a href="{{ project.live_url|default:'https://github.com/mishlight' }}" class="project-visual {{ project.color }}" target="_blank" rel="noreferrer" aria-label="View {{ project.title }}">
-          <div class="project-index">{{ forloop.counter|stringformat:"02d" }}</div>
-          <div class="project-mark">{{ project.mark }}</div>
-          <div class="project-caption">{{ project.description }}</div>
-          <div class="project-arrow"><span class="arrow diagonal">→</span></div>
-        </a>
-        <div class="project-info"><h2>{{ project.title }}</h2><p>{{ project.technology }}</p><span>{{ project.year }}</span></div>
+      <article class="project-card project-card-{{ forloop.counter }}">
+        <div class="project-top"><span>0{{ forloop.counter }}</span><span>{{ project.year }}</span></div>
+        <div class="project-art {{ project.color }}">
+          <span class="project-mark">{{ project.mark }}</span>
+          <div class="art-grid"></div>
+          {% if forloop.counter == 1 %}<div class="mock-window"><i></i><i></i><i></i><strong>YUMMY</strong><small>Order something delicious.</small></div>{% endif %}
+          {% if forloop.counter == 2 %}<div class="chat-stack"><i>Hello! 👋</i><i>Study group at 4?</i><i>Count me in.</i></div>{% endif %}
+          {% if forloop.counter == 3 %}<div class="grocery-icons"><span>🥬</span><span>🍊</span><span>🥖</span></div>{% endif %}
+        </div>
+        <div class="project-body">
+          <div><h3>{{ project.title }}</h3><p>{{ project.description }}</p></div>
+          <div class="tech-row">{% for tech in project.technology.split %}<span>{{ tech }}</span>{% endfor %}</div>
+          <a href="{{ project.live_url|default:'https://github.com/mishlight' }}" target="_blank" rel="noreferrer">View case study <span>↗</span></a>
+        </div>
       </article>
-      {% empty %}
-      <p>Projects are being prepared.</p>
       {% endfor %}
     </div>
-    <a href="https://github.com/mishlight" target="_blank" rel="noreferrer" class="text-link">Visit my GitHub <span class="arrow">→</span></a>
   </section>
 
-  <section class="about" id="about">
-    <div class="section-kicker light"><span>(02)</span><span>About me</span><span>Build for impact</span></div>
-    <div class="about-grid">
-      <div class="portrait photo-portrait">
-        <img src="{% static 'images/mishael-portrait.jpg' %}" alt="Mishael Sellu wearing a black suit">
-        <p>Curious by nature.<br>Precise by practice.</p>
-      </div>
-      <div class="about-copy">
-        <h2>Technology should<br>solve a real <em>problem.</em></h2>
-        <p>I’m studying Computer Science at Central University, with an expected graduation in 2027. I build full-stack web and mobile applications, design databases, and bring field research experience from Innovations for Poverty Action in Sierra Leone.</p>
-        <div class="services">
-          <h3>What I do</h3>
-          <ul>
-            <li><span>01</span>Full-stack web development</li>
-            <li><span>02</span>React Native mobile apps</li>
-            <li><span>03</span>Database design & APIs</li>
-            <li><span>04</span>Research & data collection</li>
-          </ul>
-        </div>
+  <section class="about section" id="about">
+    <div class="about-photo"><img src="{% static 'images/mishael-portrait.jpg' %}" alt="Portrait of Mishael Sellu"><span>Based in Sierra Leone</span></div>
+    <div class="about-content">
+      <span class="section-number">02 / ABOUT</span>
+      <h2>Developer’s mind.<br><em>Researcher’s eye.</em></h2>
+      <p class="about-lead">I care about how technology works—and who it works for.</p>
+      <p>I’m pursuing an Honours degree in Computer Science at Central University. My work combines software engineering, thoughtful interface design, database architecture, and hands-on field research experience with Innovations for Poverty Action.</p>
+      <div class="skills-grid">
+        <div><span>01</span><strong>Web Engineering</strong><p>Django, REST APIs, Next.js, HTML, CSS and JavaScript.</p></div>
+        <div><span>02</span><strong>Mobile Products</strong><p>React Native, Expo Router, Firebase and responsive navigation.</p></div>
+        <div><span>03</span><strong>Data Systems</strong><p>SQLite, PostgreSQL, MySQL and Microsoft SQL Server.</p></div>
+        <div><span>04</span><strong>Research</strong><p>Ethical data collection, field surveys and technical documentation.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="manifesto">
-    <p>Practical ideas. Reliable technology. Meaningful impact.</p>
-    <div class="marquee"><span>BUILD · LEARN · IMPROVE ✦ BUILD · LEARN · IMPROVE ✦&nbsp;</span><span aria-hidden="true">BUILD · LEARN · IMPROVE ✦ BUILD · LEARN · IMPROVE ✦</span></div>
+  <section class="journey section" id="journey">
+    <div class="section-heading">
+      <div><span class="section-number">03 / JOURNEY</span><h2>Learning by doing</h2></div>
+      <p>A growing path across software, research, and technology for social impact.</p>
+    </div>
+    <div class="timeline">
+      <article><span>2024 — PRESENT</span><div><h3>BSc (Hons) Computer Science</h3><p>Central University · Expected graduation 2027</p></div><i>Education</i></article>
+      <article><span>2026</span><div><h3>Field Enumerator / Research Assistant</h3><p>Innovations for Poverty Action · Sierra Leone</p></div><i>Experience</i></article>
+      <article><span>CERTIFIED</span><div><h3>Research Ethics & Human Subjects Protection</h3><p>Collaborative Institutional Training Initiative</p></div><i>Certification</i></article>
+    </div>
   </section>
 
+  <section class="quote-band"><p>“The best technology is not the loudest.<br>It’s the one that quietly makes life <em>better.</em>”</p></section>
+
   <footer id="contact">
-    <div class="section-kicker footer-kicker"><span>(03)</span><span>Let’s talk</span><span>Open for select projects</span></div>
-    <div class="footer-main">
-      <div>
-        <h2>Have an idea?<br><em>Let’s make it move.</em></h2>
-        {% for message in messages %}<p class="form-message {{ message.tags }}" role="status">{{ message }}</p>{% endfor %}
-        <form class="contact-form" method="post">
-          {% csrf_token %}
-          <label><span>Your name</span>{{ form.name }}{{ form.name.errors }}</label>
-          <label><span>Email address</span>{{ form.email }}{{ form.email.errors }}</label>
-          <label class="wide"><span>Tell me about the project</span>{{ form.message }}{{ form.message.errors }}</label>
-          <button class="contact-button" type="submit">Start a conversation <span class="arrow diagonal">→</span></button>
+    <div class="contact-wrap">
+      <div class="contact-copy">
+        <span class="section-number">04 / CONTACT</span>
+        <h2>Let’s build something<br><em>worth using.</em></h2>
+        <p>Have a project, opportunity, or interesting problem? I’d love to hear about it.</p>
+        <a href="mailto:mishaelsellu68@gmail.com">mishaelsellu68@gmail.com <span>↗</span></a>
+      </div>
+      <div class="form-card">
+        {% for message in messages %}<p class="form-message {{ message.tags }}">{{ message }}</p>{% endfor %}
+        <form method="post">{% csrf_token %}
+          <div class="form-row"><label><span>Name</span>{{ form.name }}{{ form.name.errors }}</label><label><span>Email</span>{{ form.email }}{{ form.email.errors }}</label></div>
+          <label><span>Tell me about your idea</span>{{ form.message }}{{ form.message.errors }}</label>
+          <button type="submit">Send message <span>↗</span></button>
         </form>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div><a href="https://github.com/mishlight" target="_blank" rel="noreferrer">GitHub</a><a href="mailto:mishaelsellu68@gmail.com">Email</a></div>
-      <span>© 2026 Mishael Sellu</span><a href="#top">Back to top ↑</a>
-    </div>
+    <div class="footer-bottom"><span>© 2026 Mishael Sellu</span><div><a href="https://github.com/mishlight">GitHub</a><a href="#top">Back to top ↑</a></div></div>
   </footer>
 </main>
 <script src="{% static 'js/site.js' %}"></script>
