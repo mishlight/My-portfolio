@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/style.css' %}?v=5">
-  <link rel="stylesheet" href="{% static 'css/projects.css' %}?v=2">
+  <link rel="stylesheet" href="{% static 'css/projects.css' %}?v=3">
 </head>
 <body>
 <div class="page-glow"></div>
@@ -58,22 +58,22 @@
       <article class="project-card reveal">
         <div class="project-visual visual-{{ forloop.counter }}">
           <div class="project-number">0{{ forloop.counter }}</div>
-          {% if forloop.counter == 1 %}
-          <div class="project-shot browser-shot"><div class="shot-bar"><i></i><i></i><i></i><span>Sky Snake</span></div><img src="{% static 'images/projects/sky-snake.png' %}" alt="Sky Snake game interface"></div>
-          {% elif forloop.counter == 2 %}
-          <div class="project-shot browser-shot"><div class="shot-bar"><i></i><i></i><i></i><span>Management System</span></div><img src="{% static 'images/projects/management-system.png' %}" alt="Management System dashboard"></div>
-          {% elif forloop.counter == 3 %}
-          <div class="project-shot mobile-shot"><div class="phone-speaker"></div><img src="{% static 'images/projects/freshbasket-mobile.png' %}" alt="FreshBasket mobile app interface"></div>
-          {% elif forloop.counter == 4 %}
-          <div class="project-shot browser-shot"><div class="shot-bar"><i></i><i></i><i></i><span>Mishlight Store</span></div><img src="{% static 'images/projects/mishlight-store.png' %}" alt="Mishlight Store product catalogue"></div>
-          {% elif forloop.counter == 5 %}
+          {% if project.title == "Sky Snake" %}
+          <div class="project-shot browser-shot project-gallery" data-gallery><div class="shot-bar"><i></i><i></i><i></i><span>Sky Snake</span></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/sky-snake-1.png' %}" alt="Sky Snake world selection"><img src="{% static 'images/projects/sky-snake-2.png' %}" alt="Sky Snake difficulty selection"><img src="{% static 'images/projects/sky-snake-3.png' %}" alt="Sky Snake gameplay"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous Sky Snake screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next Sky Snake screenshot">→</button></div></div>
+          {% elif project.title == "YUMMY Restaurant Web Application" %}
+          <div class="project-shot browser-shot project-gallery" data-gallery><div class="shot-bar"><i></i><i></i><i></i><span>YUMMY Restaurant</span></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/yummy-web-1.png' %}" alt="YUMMY restaurant home page"><img src="{% static 'images/projects/yummy-web-2.png' %}" alt="YUMMY restaurant about page"><img src="{% static 'images/projects/yummy-web-3.png' %}" alt="YUMMY restaurant contact page"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous YUMMY Restaurant screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next YUMMY Restaurant screenshot">→</button></div></div>
+          {% elif project.title == "UniConnect" %}
+          <div class="project-shot browser-shot project-gallery" data-gallery><div class="shot-bar"><i></i><i></i><i></i><span>UniConnect</span></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/uniconnect-1.png' %}" alt="UniConnect landing page"><img src="{% static 'images/projects/uniconnect-2.png' %}" alt="UniConnect login page"><img src="{% static 'images/projects/uniconnect-3.png' %}" alt="UniConnect registration page"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous UniConnect screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next UniConnect screenshot">→</button></div></div>
+          {% elif project.title == "Django Management System" %}
+          <div class="project-shot browser-shot project-gallery" data-gallery><div class="shot-bar"><i></i><i></i><i></i><span>Management System</span></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/management-1.png' %}" alt="Management System dashboard"><img src="{% static 'images/projects/management-2.png' %}" alt="Management System users page"><img src="{% static 'images/projects/management-3.png' %}" alt="Management System charts page"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous Management System screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next Management System screenshot">→</button></div></div>
+          {% elif project.title == "FreshBasket Mobile Concept" %}
+          <div class="project-shot mobile-shot project-gallery" data-gallery><div class="phone-speaker"></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/freshbasket-1.png' %}" alt="FreshBasket welcome screen"><img src="{% static 'images/projects/freshbasket-2.png' %}" alt="FreshBasket shopping screen"><img src="{% static 'images/projects/freshbasket-3.png' %}" alt="FreshBasket cart screen"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous FreshBasket screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next FreshBasket screenshot">→</button></div></div>
+          {% elif project.title == "Mishlight Store" %}
+          <div class="project-shot browser-shot project-gallery" data-gallery><div class="shot-bar"><i></i><i></i><i></i><span>Mishlight Store</span></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/mishlight-store-1.png' %}" alt="Mishlight Store full catalogue"><img src="{% static 'images/projects/mishlight-store-2.png' %}" alt="Mishlight Store clothing category"><img src="{% static 'images/projects/mishlight-store-3.png' %}" alt="Mishlight Store books category"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous Mishlight Store screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next Mishlight Store screenshot">→</button></div></div>
+          {% elif project.title == "School Registration Management System" %}
           <div class="desktop-mock"><div class="desktop-top"><i></i><b>SRMS</b></div><div class="desktop-body"><span>STUDENT REGISTRATION</span><strong>Academic records.<br>Organised.</strong><div><i></i><i></i><i></i></div></div></div>
-          {% elif forloop.counter == 6 %}
-          <div class="project-shot browser-shot"><div class="shot-bar"><i></i><i></i><i></i><span>UniConnect</span></div><img src="{% static 'images/projects/uniconnect.png' %}" alt="UniConnect university platform"></div>
-          {% elif forloop.counter == 7 %}
-          <div class="project-shot mobile-shot"><div class="phone-speaker"></div><img src="{% static 'images/projects/yummy-mobile.png' %}" alt="YUMMY mobile ordering app"></div>
           {% else %}
-          <div class="project-shot browser-shot"><div class="shot-bar"><i></i><i></i><i></i><span>YUMMY Restaurant</span></div><img src="{% static 'images/projects/yummy-web.png' %}" alt="YUMMY restaurant web application"></div>
+          <div class="project-shot mobile-shot project-gallery" data-gallery><div class="phone-speaker"></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/yummy-mobile-1.png' %}" alt="YUMMY Mobile splash screen"><img src="{% static 'images/projects/yummy-mobile-2.png' %}" alt="YUMMY Mobile onboarding screen"><img src="{% static 'images/projects/yummy-mobile-3.png' %}" alt="YUMMY Mobile login screen"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous YUMMY Mobile screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next YUMMY Mobile screenshot">→</button></div></div>
           {% endif %}
         </div>
         <div class="project-info">
@@ -146,6 +146,6 @@
 
   <footer><div><a href="#top" class="footer-brand">MS</a><p>Full-stack developer building from Freetown, Sierra Leone.</p></div><div><a href="https://github.com/mishlight">GitHub ↗</a><a href="mailto:mishaelsellu68@gmail.com">Email ↗</a><a href="#top">Back to top ↑</a></div><span>© 2026 Mishael Sellu</span></footer>
 </main>
-<script src="{% static 'js/site.js' %}?v=5"></script>
+<script src="{% static 'js/site.js' %}?v=6"></script>
 </body>
 </html>

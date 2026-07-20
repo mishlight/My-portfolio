@@ -41,3 +41,22 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12 });
 document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+
+document.querySelectorAll("[data-gallery]").forEach((gallery) => {
+  const images = [...gallery.querySelectorAll(".gallery-stage img")];
+  const current = gallery.querySelector("[data-gallery-current]");
+  let index = 0;
+
+  const show = (nextIndex) => {
+    index = (nextIndex + images.length) % images.length;
+    images.forEach((image, imageIndex) => {
+      image.classList.toggle("active", imageIndex === index);
+      image.setAttribute("aria-hidden", String(imageIndex !== index));
+    });
+    if (current) current.textContent = String(index + 1);
+  };
+
+  gallery.querySelector("[data-gallery-prev]")?.addEventListener("click", () => show(index - 1));
+  gallery.querySelector("[data-gallery-next]")?.addEventListener("click", () => show(index + 1));
+  show(0);
+});

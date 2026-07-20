@@ -37,9 +37,17 @@ html{max-width:100%;overflow-x:hidden}
 .shot-bar i{width:7px;height:7px;border-radius:50%;background:#f4673a}
 .shot-bar i:nth-child(2){background:#f5ad28}.shot-bar i:nth-child(3){background:#63df88}
 .shot-bar span{margin-left:8px;font:600 .5rem Manrope;letter-spacing:.04em}
-.browser-shot img{width:100%;height:calc(100% - 34px);object-fit:cover;object-position:top center;display:block}
+.gallery-stage{position:relative;width:100%;height:calc(100% - 34px);overflow:hidden}
+.gallery-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block;opacity:0;transform:scale(1.025);transition:opacity .3s ease,transform .45s ease}
+.gallery-stage img.active{opacity:1;transform:scale(1)}
+.gallery-controls{position:absolute;z-index:4;right:12px;bottom:12px;display:flex;align-items:center;gap:8px;padding:5px 7px;border:1px solid #ffffff35;border-radius:999px;background:#071526dc;color:white;box-shadow:0 6px 18px #0005;backdrop-filter:blur(8px)}
+.gallery-controls button{width:28px;height:28px;border:0;border-radius:50%;background:white;color:#071526;font:800 .85rem Manrope;cursor:pointer;transition:transform .2s ease,background .2s ease}
+.gallery-controls button:hover,.gallery-controls button:focus-visible{background:#f5ad28;transform:scale(1.08)}
+.gallery-controls span{min-width:35px;text-align:center;font:700 .55rem Manrope}
 .mobile-shot{width:265px;height:480px;border:10px solid #08172a;border-radius:38px;box-shadow:18px 22px 0 #f5ad28;background:#08172a}
-.mobile-shot img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;border-radius:25px}
+.mobile-shot .gallery-stage{height:100%;border-radius:25px}
+.mobile-shot .gallery-stage img{object-position:center;border-radius:25px}
+.mobile-shot .gallery-controls{right:50%;bottom:12px;transform:translateX(50%)}
 .phone-speaker{position:absolute;z-index:2;top:8px;left:50%;width:72px;height:18px;transform:translateX(-50%);border-radius:0 0 12px 12px;background:#08172a}
 .snake-mock{width:72%;background:#121a38;color:white;padding:24px;border:1px solid #94a7ff55;border-radius:22px;box-shadow:20px 22px 0 #f5ad28;transform:rotate(-2deg)}
 .snake-top,.snake-bottom{display:flex;align-items:center;justify-content:space-between;font:800 .55rem Manrope;letter-spacing:.08em}
