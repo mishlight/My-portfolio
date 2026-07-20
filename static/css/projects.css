@@ -30,6 +30,17 @@ html{max-width:100%;overflow-x:hidden}
 .fresh-mock{box-shadow:18px 20px 0 #071b33}
 .yummy-mobile-mock{box-shadow:18px 20px 0 #f5ad28}
 .yummy-mobile-mock>div{background:#1c272a;color:white}
+.project-shot{position:relative;z-index:1;overflow:hidden;background:#0a1627}
+.browser-shot{width:82%;height:72%;border:8px solid #08172a;border-radius:16px;box-shadow:18px 22px 0 #f5ad28;transform:rotate(-1.5deg)}
+.project-card:nth-child(even) .browser-shot{transform:rotate(1.5deg)}
+.shot-bar{height:34px;background:#08172a;display:flex;align-items:center;gap:7px;padding:0 12px;color:#9db0c3}
+.shot-bar i{width:7px;height:7px;border-radius:50%;background:#f4673a}
+.shot-bar i:nth-child(2){background:#f5ad28}.shot-bar i:nth-child(3){background:#63df88}
+.shot-bar span{margin-left:8px;font:600 .5rem Manrope;letter-spacing:.04em}
+.browser-shot img{width:100%;height:calc(100% - 34px);object-fit:cover;object-position:top center;display:block}
+.mobile-shot{width:265px;height:480px;border:10px solid #08172a;border-radius:38px;box-shadow:18px 22px 0 #f5ad28;background:#08172a}
+.mobile-shot img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;border-radius:25px}
+.phone-speaker{position:absolute;z-index:2;top:8px;left:50%;width:72px;height:18px;transform:translateX(-50%);border-radius:0 0 12px 12px;background:#08172a}
 .snake-mock{width:72%;background:#121a38;color:white;padding:24px;border:1px solid #94a7ff55;border-radius:22px;box-shadow:20px 22px 0 #f5ad28;transform:rotate(-2deg)}
 .snake-top,.snake-bottom{display:flex;align-items:center;justify-content:space-between;font:800 .55rem Manrope;letter-spacing:.08em}
 .snake-top span{color:#8fffba}
@@ -42,6 +53,8 @@ html{max-width:100%;overflow-x:hidden}
 @media(max-width:580px){
   .dashboard-mock,.store-mock,.desktop-mock{width:84%}
   .snake-mock{width:84%;padding:17px}.snake-board{height:220px}
+  .browser-shot{width:88%;height:68%}
+  .mobile-shot{width:205px;height:350px;border-width:8px}
   .dashboard-mock{grid-template-columns:48px 1fr;height:70%}
   .mock-sidebar{padding:20px 12px}
   .mock-dashboard,.desktop-body{padding:28px}

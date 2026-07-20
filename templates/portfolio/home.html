@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/style.css' %}?v=5">
-  <link rel="stylesheet" href="{% static 'css/projects.css' %}?v=1">
+  <link rel="stylesheet" href="{% static 'css/projects.css' %}?v=2">
 </head>
 <body>
 <div class="page-glow"></div>
@@ -59,21 +59,21 @@
         <div class="project-visual visual-{{ forloop.counter }}">
           <div class="project-number">0{{ forloop.counter }}</div>
           {% if forloop.counter == 1 %}
-          <div class="snake-mock"><div class="snake-top"><small>SKY SNAKE</small><span>SCORE 120</span></div><div class="snake-board"><i></i><i></i><i></i><i></i><i></i><i></i><b></b><em></em></div><div class="snake-bottom"><span>LAND</span><span>SEA</span><span>MOUNTAIN</span></div></div>
+          <div class="project-shot browser-shot"><div class="shot-bar"><i></i><i></i><i></i><span>Sky Snake</span></div><img src="{% static 'images/projects/sky-snake.png' %}" alt="Sky Snake game interface"></div>
           {% elif forloop.counter == 2 %}
-          <div class="dashboard-mock"><div class="mock-sidebar"><b>MS</b><i></i><i></i><i></i></div><div class="mock-dashboard"><small>OVERVIEW</small><strong>Management<br>made clear.</strong><div><span></span><span></span><span></span></div></div></div>
+          <div class="project-shot browser-shot"><div class="shot-bar"><i></i><i></i><i></i><span>Management System</span></div><img src="{% static 'images/projects/management-system.png' %}" alt="Management System dashboard"></div>
           {% elif forloop.counter == 3 %}
-          <div class="phone-mock fresh-mock"><div><small>FreshBasket</small><b>Groceries,<br>thoughtfully.</b><span>🥬 🍊 🥑</span><button>Explore concept</button></div></div>
+          <div class="project-shot mobile-shot"><div class="phone-speaker"></div><img src="{% static 'images/projects/freshbasket-mobile.png' %}" alt="FreshBasket mobile app interface"></div>
           {% elif forloop.counter == 4 %}
-          <div class="store-mock"><div class="browser-bar"><i></i><i></i><i></i></div><small>MISHLIGHT STORE</small><strong>Everything you need.<br>One colourful store.</strong><div>SHOP THE COLLECTION →</div></div>
+          <div class="project-shot browser-shot"><div class="shot-bar"><i></i><i></i><i></i><span>Mishlight Store</span></div><img src="{% static 'images/projects/mishlight-store.png' %}" alt="Mishlight Store product catalogue"></div>
           {% elif forloop.counter == 5 %}
           <div class="desktop-mock"><div class="desktop-top"><i></i><b>SRMS</b></div><div class="desktop-body"><span>STUDENT REGISTRATION</span><strong>Academic records.<br>Organised.</strong><div><i></i><i></i><i></i></div></div></div>
           {% elif forloop.counter == 6 %}
-          <div class="community-mock"><small>UNICONNECT</small><h3>Your campus.<br>One community.</h3><div><span>Study groups</span><span>Marketplace</span><span>Messages</span><span>Help desk</span></div></div>
+          <div class="project-shot browser-shot"><div class="shot-bar"><i></i><i></i><i></i><span>UniConnect</span></div><img src="{% static 'images/projects/uniconnect.png' %}" alt="UniConnect university platform"></div>
           {% elif forloop.counter == 7 %}
-          <div class="phone-mock yummy-mobile-mock"><div><small>YUMMY MOBILE</small><b>Order your<br>favourites.</b><span>🍔 🍕 🥤</span><button>Browse menu</button></div></div>
+          <div class="project-shot mobile-shot"><div class="phone-speaker"></div><img src="{% static 'images/projects/yummy-mobile.png' %}" alt="YUMMY mobile ordering app"></div>
           {% else %}
-          <div class="browser-mock"><div class="browser-bar"><i></i><i></i><i></i></div><small>YUMMY</small><h3>Good food.<br>Delivered simply.</h3><button>Browse menu →</button></div>
+          <div class="project-shot browser-shot"><div class="shot-bar"><i></i><i></i><i></i><span>YUMMY Restaurant</span></div><img src="{% static 'images/projects/yummy-web.png' %}" alt="YUMMY restaurant web application"></div>
           {% endif %}
         </div>
         <div class="project-info">
