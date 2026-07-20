@@ -21,3 +21,23 @@ function updateTime() {
 }
 updateTime();
 setInterval(updateTime, 30000);
+
+const themeToggle = document.querySelector(".theme-toggle");
+const root = document.documentElement;
+const savedTheme = localStorage.getItem("portfolio-theme");
+if (savedTheme) root.dataset.theme = savedTheme;
+themeToggle?.addEventListener("click", () => {
+  root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+  localStorage.setItem("portfolio-theme", root.dataset.theme);
+  themeToggle.querySelector("span").textContent = root.dataset.theme === "dark" ? "☼" : "☾";
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
