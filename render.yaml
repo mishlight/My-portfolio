@@ -15,3 +15,15 @@ services:
         value: "False"
       - key: PYTHON_VERSION
         value: "3.13.5"
+      - key: SITE_URL
+        value: "https://mishael-sellu-portfolio.onrender.com"
+      - key: CONTACT_NOTIFICATION_EMAIL
+        value: "mishaelsellu68@gmail.com"
+      - key: DEFAULT_FROM_EMAIL
+        value: "portfolio@mishaelsellu.dev"
+      - key: EMAIL_HOST
+        sync: false
+      - key: EMAIL_HOST_USER
+        sync: false
+      - key: EMAIL_HOST_PASSWORD
+        sync: false

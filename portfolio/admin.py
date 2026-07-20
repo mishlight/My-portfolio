@@ -3,9 +3,10 @@ from .models import Inquiry, Project
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ("title", "technology", "year", "is_featured", "sort_order")
+    list_display = ("title", "slug", "technology", "year", "is_featured", "sort_order")
     list_editable = ("is_featured", "sort_order")
-    search_fields = ("title", "technology", "description")
+    prepopulated_fields = {"slug": ("title",)}
+    search_fields = ("title", "technology", "description", "problem")
 
 @admin.register(Inquiry)
 class InquiryAdmin(admin.ModelAdmin):

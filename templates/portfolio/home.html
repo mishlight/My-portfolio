@@ -4,8 +4,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Mishael Sellu — full-stack developer building useful web, mobile, and data products in Sierra Leone.">
-  <title>Mishael Sellu — Full-Stack Developer</title>
+  <meta name="description" content="Mishael Sellu is a full-stack developer in Sierra Leone building purposeful web, mobile, and data products with Django, React Native, and modern JavaScript.">
+  <meta name="author" content="Mishael Sellu">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mishael Sellu | Full-Stack Developer">
+  <meta property="og:description" content="Explore purposeful web, mobile, and data products built by Mishael Sellu in Freetown, Sierra Leone.">
+  <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{% url 'home' %}">
+  <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/mishael-og-cover.jpg' %}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mishael Sellu | Full-Stack Developer">
+  <meta name="twitter:description" content="Purposeful web, mobile, and data products from Freetown, Sierra Leone.">
+  <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/mishael-og-cover.jpg' %}">
+  <link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{% url 'home' %}">
+  <link rel="icon" href="{% static 'images/favicon.svg' %}" type="image/svg+xml">
+  <title>Mishael Sellu | Full-Stack Developer in Sierra Leone</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -32,7 +47,7 @@
       <p>I’m Mishael, a full-stack developer and Computer Science student in Freetown. I turn practical ideas into reliable web, mobile, and data experiences.</p>
       <div class="hero-actions">
         <a href="#projects" class="primary-button">Explore projects <span>↓</span></a>
-        <a href="{% static 'downloads/Mishael_Sellu_CV.docx' %}" class="secondary-button" download>Download CV <span>↘</span></a>
+        <a href="{% static 'downloads/Mishael_Sellu_CV_Updated.pdf' %}" class="secondary-button" download>Download CV <span>↘</span></a>
       </div>
       <div class="hero-metrics">
         <div><strong>08</strong><span>Selected projects</span></div>
@@ -59,34 +74,36 @@
         <div class="project-visual visual-{{ forloop.counter }}">
           <div class="project-number">0{{ forloop.counter }}</div>
           {% if project.title == "Sky Snake" %}
-          <div class="project-shot browser-shot project-gallery" data-gallery><div class="shot-bar"><i></i><i></i><i></i><span>Sky Snake</span></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/sky-snake-1.png' %}" alt="Sky Snake world selection"><img src="{% static 'images/projects/sky-snake-2.png' %}" alt="Sky Snake difficulty selection"><img src="{% static 'images/projects/sky-snake-3.png' %}" alt="Sky Snake gameplay"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous Sky Snake screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next Sky Snake screenshot">→</button></div></div>
+          <div class="project-shot browser-shot project-gallery" data-gallery><div class="shot-bar"><i></i><i></i><i></i><span>Sky Snake</span></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/sky-snake-1.webp' %}" alt="Sky Snake world selection"><img src="{% static 'images/projects/sky-snake-2.webp' %}" alt="Sky Snake difficulty selection"><img src="{% static 'images/projects/sky-snake-3.webp' %}" alt="Sky Snake gameplay"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous Sky Snake screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next Sky Snake screenshot">→</button></div></div>
           {% elif project.title == "YUMMY Restaurant Web Application" %}
-          <div class="project-shot browser-shot project-gallery" data-gallery><div class="shot-bar"><i></i><i></i><i></i><span>YUMMY Restaurant</span></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/yummy-web-1.png' %}" alt="YUMMY restaurant home page"><img src="{% static 'images/projects/yummy-web-2.png' %}" alt="YUMMY restaurant about page"><img src="{% static 'images/projects/yummy-web-3.png' %}" alt="YUMMY restaurant contact page"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous YUMMY Restaurant screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next YUMMY Restaurant screenshot">→</button></div></div>
+          <div class="project-shot browser-shot project-gallery" data-gallery><div class="shot-bar"><i></i><i></i><i></i><span>YUMMY Restaurant</span></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/yummy-web-1.webp' %}" alt="YUMMY restaurant home page"><img src="{% static 'images/projects/yummy-web-2.webp' %}" alt="YUMMY restaurant about page"><img src="{% static 'images/projects/yummy-web-3.webp' %}" alt="YUMMY restaurant contact page"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous YUMMY Restaurant screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next YUMMY Restaurant screenshot">→</button></div></div>
           {% elif project.title == "UniConnect" %}
-          <div class="project-shot browser-shot project-gallery" data-gallery><div class="shot-bar"><i></i><i></i><i></i><span>UniConnect</span></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/uniconnect-1.png' %}" alt="UniConnect landing page"><img src="{% static 'images/projects/uniconnect-2.png' %}" alt="UniConnect login page"><img src="{% static 'images/projects/uniconnect-3.png' %}" alt="UniConnect registration page"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous UniConnect screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next UniConnect screenshot">→</button></div></div>
+          <div class="project-shot browser-shot project-gallery" data-gallery><div class="shot-bar"><i></i><i></i><i></i><span>UniConnect</span></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/uniconnect-1.webp' %}" alt="UniConnect landing page"><img src="{% static 'images/projects/uniconnect-2.webp' %}" alt="UniConnect login page"><img src="{% static 'images/projects/uniconnect-3.webp' %}" alt="UniConnect registration page"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous UniConnect screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next UniConnect screenshot">→</button></div></div>
           {% elif project.title == "Django Management System" %}
-          <div class="project-shot browser-shot project-gallery" data-gallery><div class="shot-bar"><i></i><i></i><i></i><span>Management System</span></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/management-1.png' %}" alt="Management System dashboard"><img src="{% static 'images/projects/management-2.png' %}" alt="Management System users page"><img src="{% static 'images/projects/management-3.png' %}" alt="Management System charts page"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous Management System screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next Management System screenshot">→</button></div></div>
+          <div class="project-shot browser-shot project-gallery" data-gallery><div class="shot-bar"><i></i><i></i><i></i><span>Management System</span></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/management-1.webp' %}" alt="Management System dashboard"><img src="{% static 'images/projects/management-2.webp' %}" alt="Management System users page"><img src="{% static 'images/projects/management-3.webp' %}" alt="Management System charts page"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous Management System screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next Management System screenshot">→</button></div></div>
           {% elif project.title == "FreshBasket Mobile Concept" %}
-          <div class="project-shot mobile-shot project-gallery" data-gallery><div class="phone-speaker"></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/freshbasket-1.png' %}" alt="FreshBasket welcome screen"><img src="{% static 'images/projects/freshbasket-2.png' %}" alt="FreshBasket shopping screen"><img src="{% static 'images/projects/freshbasket-3.png' %}" alt="FreshBasket cart screen"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous FreshBasket screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next FreshBasket screenshot">→</button></div></div>
+          <div class="project-shot mobile-shot project-gallery" data-gallery><div class="phone-speaker"></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/freshbasket-1.webp' %}" alt="FreshBasket welcome screen"><img src="{% static 'images/projects/freshbasket-2.webp' %}" alt="FreshBasket shopping screen"><img src="{% static 'images/projects/freshbasket-3.webp' %}" alt="FreshBasket cart screen"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous FreshBasket screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next FreshBasket screenshot">→</button></div></div>
           {% elif project.title == "Mishlight Store" %}
-          <div class="project-shot browser-shot project-gallery" data-gallery><div class="shot-bar"><i></i><i></i><i></i><span>Mishlight Store</span></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/mishlight-store-1.png' %}" alt="Mishlight Store full catalogue"><img src="{% static 'images/projects/mishlight-store-2.png' %}" alt="Mishlight Store clothing category"><img src="{% static 'images/projects/mishlight-store-3.png' %}" alt="Mishlight Store books category"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous Mishlight Store screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next Mishlight Store screenshot">→</button></div></div>
+          <div class="project-shot browser-shot project-gallery" data-gallery><div class="shot-bar"><i></i><i></i><i></i><span>Mishlight Store</span></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/mishlight-store-1.webp' %}" alt="Mishlight Store full catalogue"><img src="{% static 'images/projects/mishlight-store-2.webp' %}" alt="Mishlight Store clothing category"><img src="{% static 'images/projects/mishlight-store-3.webp' %}" alt="Mishlight Store books category"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous Mishlight Store screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next Mishlight Store screenshot">→</button></div></div>
           {% elif project.title == "School Registration Management System" %}
           <div class="desktop-mock"><div class="desktop-top"><i></i><b>SRMS</b></div><div class="desktop-body"><span>STUDENT REGISTRATION</span><strong>Academic records.<br>Organised.</strong><div><i></i><i></i><i></i></div></div></div>
           {% else %}
-          <div class="project-shot mobile-shot project-gallery" data-gallery><div class="phone-speaker"></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/yummy-mobile-1.png' %}" alt="YUMMY Mobile splash screen"><img src="{% static 'images/projects/yummy-mobile-2.png' %}" alt="YUMMY Mobile onboarding screen"><img src="{% static 'images/projects/yummy-mobile-3.png' %}" alt="YUMMY Mobile login screen"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous YUMMY Mobile screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next YUMMY Mobile screenshot">→</button></div></div>
+          <div class="project-shot mobile-shot project-gallery" data-gallery><div class="phone-speaker"></div><div class="gallery-stage"><img class="active" src="{% static 'images/projects/yummy-mobile-1.webp' %}" alt="YUMMY Mobile splash screen"><img src="{% static 'images/projects/yummy-mobile-2.webp' %}" alt="YUMMY Mobile onboarding screen"><img src="{% static 'images/projects/yummy-mobile-3.webp' %}" alt="YUMMY Mobile login screen"></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous YUMMY Mobile screenshot">←</button><span><b data-gallery-current>1</b> / 3</span><button type="button" data-gallery-next aria-label="Next YUMMY Mobile screenshot">→</button></div></div>
           {% endif %}
         </div>
         <div class="project-info">
           <div><span>{{ project.year }} · {{ project.mark }}</span><h3>{{ project.title }}</h3></div>
           <p>{{ project.description }}</p>
           <div class="tags">{% for tech in project.technology.split %}{% if tech != "·" %}<span>{{ tech }}</span>{% endif %}{% endfor %}</div>
-          {% if project.live_url %}
-          <a href="{{ project.live_url }}" target="_blank" rel="noreferrer">View live project <span>↗</span></a>
-          {% elif project.repository_url %}
-          <a href="{{ project.repository_url }}" target="_blank" rel="noreferrer">View repository <span>↗</span></a>
-          {% else %}
-          <span class="private-note">PRIVATE PROJECT · WALKTHROUGH AVAILABLE</span>
-          {% endif %}
+          <div class="project-links">
+            <a href="{{ project.get_absolute_url }}">View case study <span>→</span></a>
+            {% if project.live_url %}
+            <a href="{{ project.live_url }}" target="_blank" rel="noreferrer">Live demo <span>↗</span></a>
+            {% elif project.repository_url %}
+            <a href="{{ project.repository_url }}" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+            {% endif %}
+          </div>
+          {% if not project.live_url and not project.repository_url %}<span class="private-note">PRIVATE PROJECT · WALKTHROUGH AVAILABLE</span>{% endif %}
         </div>
       </article>
       {% endfor %}
@@ -136,7 +153,8 @@
     <div class="contact-copy reveal"><span>06 / CONTACT</span><h2>Let’s create<br><em>something useful.</em></h2><p>Open to internships, freelance work, collaborations, and conversations about technology with purpose.</p><a href="mailto:mishaelsellu68@gmail.com">mishaelsellu68@gmail.com ↗</a></div>
     <div class="contact-form reveal">
       {% for message in messages %}<p class="form-message {{ message.tags }}">{{ message }}</p>{% endfor %}
-      <form method="post">{% csrf_token %}
+      <form method="post">{% csrf_token %}{{ form.started_at }}
+        <div class="form-trap" aria-hidden="true"><label>Website{{ form.website }}</label></div>
         <div class="form-row"><label><span>Name</span>{{ form.name }}{{ form.name.errors }}</label><label><span>Email</span>{{ form.email }}{{ form.email.errors }}</label></div>
         <label><span>Tell me about the opportunity or idea</span>{{ form.message }}{{ form.message.errors }}</label>
         <button type="submit">Send message <span>↗</span></button>

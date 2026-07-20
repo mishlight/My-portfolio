@@ -8,6 +8,10 @@ html{max-width:100%;overflow-x:hidden}
 .visual-7{background:linear-gradient(135deg,#101719,#f4673a)}
 .visual-8{background:linear-gradient(135deg,#f4673a,#f5ad28)}
 .private-note{font:700 .55rem Manrope;color:var(--sky);letter-spacing:.08em;border-bottom:1px solid var(--line);width:max-content;padding-bottom:6px}
+.project-links{display:flex;flex-wrap:wrap;gap:18px;margin-top:4px}
+.project-links a{font:700 .62rem Manrope;border-bottom:1px solid;padding-bottom:5px}
+.project-links a span{margin-left:10px}
+.form-trap{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
 .dashboard-mock{width:76%;height:66%;display:grid;grid-template-columns:74px 1fr;background:#f7f9fd;color:#071b33;border-radius:15px;overflow:hidden;box-shadow:20px 22px 0 #f5ad28;transform:rotate(-2deg)}
 .mock-sidebar{background:#071b33;padding:25px 20px;display:flex;flex-direction:column;align-items:center;gap:20px}
 .mock-sidebar b{color:white;font:800 .7rem Manrope;margin-bottom:25px}

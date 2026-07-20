@@ -1,5 +1,22 @@
 # Mishael Sellu Portfolio
 
+## Contact email notifications
+
+The contact form stores enquiries in SQLite and includes CSRF protection, a
+honeypot field, signed submission timing, link/content validation, and a
+one-minute session rate limit.
+
+To send notification emails in production, configure these Render environment
+variables:
+
+- `EMAIL_HOST` (for Gmail: `smtp.gmail.com`)
+- `EMAIL_PORT` (`587`)
+- `EMAIL_HOST_USER`
+- `EMAIL_HOST_PASSWORD` (use an email app password, never a normal password)
+- `EMAIL_USE_TLS` (`True`)
+- `DEFAULT_FROM_EMAIL`
+- `CONTACT_NOTIFICATION_EMAIL`
+
 A Django-based personal portfolio with SQLite project management and a contact inquiry database.
 
 ## Run locally

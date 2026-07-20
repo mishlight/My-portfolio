@@ -1,0 +1,95 @@
+{% load static %}
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="{{ project.description|truncatechars:155 }}">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ project.title }} | Mishael Sellu">
+  <meta property="og:description" content="{{ project.description|truncatechars:180 }}">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+  <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/mishael-og-cover.jpg' %}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="{{ request.build_absolute_uri }}">
+  <link rel="icon" href="{% static 'images/favicon.svg' %}" type="image/svg+xml">
+  <title>{{ project.title }} | Mishael Sellu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}?v=6">
+  <link rel="stylesheet" href="{% static 'css/project-detail.css' %}?v=1">
+</head>
+<body>
+<nav class="nav detail-nav">
+  <a href="{% url 'home' %}" class="brand"><b>MS</b><span>Mishael Sellu<small>Developer · Sierra Leone</small></span></a>
+  <a class="back-link" href="{% url 'home' %}#projects">← All projects</a>
+  <button class="theme-toggle" type="button" aria-label="Toggle color theme"><span>☼</span></button>
+</nav>
+
+<main class="case-study">
+  <header class="case-hero">
+    <div>
+      <span class="case-kicker">{{ project.year }} · {{ project.mark }}</span>
+      <h1>{{ project.title }}</h1>
+      <p>{{ project.description }}</p>
+      <div class="case-actions">
+        {% if project.live_url %}<a class="primary-button" href="{{ project.live_url }}" target="_blank" rel="noreferrer">Open live demo ↗</a>{% endif %}
+        {% if project.repository_url %}<a class="case-secondary" href="{{ project.repository_url }}" target="_blank" rel="noreferrer">View GitHub ↗</a>{% endif %}
+        {% if not project.live_url and not project.repository_url %}<span class="case-private">Private repository · walkthrough available</span>{% endif %}
+      </div>
+    </div>
+    <div class="case-index">0{{ project.sort_order }}</div>
+  </header>
+
+  <section class="case-overview">
+    <article>
+      <span>01 / PROBLEM</span>
+      <h2>What needed to be solved</h2>
+      <p>{{ project.problem }}</p>
+    </article>
+    <aside>
+      <span>TECHNOLOGIES</span>
+      <div class="detail-tags">{% for technology in technologies %}<b>{{ technology }}</b>{% endfor %}</div>
+    </aside>
+  </section>
+
+  <section class="case-grid">
+    <article>
+      <span>02 / FEATURES</span>
+      <h2>What the product does</h2>
+      <ul>{% for feature in project.feature_list %}<li><b>{{ forloop.counter|stringformat:"02d" }}</b>{{ feature }}</li>{% endfor %}</ul>
+    </article>
+    <article>
+      <span>03 / CHALLENGES</span>
+      <h2>What made it interesting</h2>
+      <ul>{% for challenge in project.challenge_list %}<li><b>{{ forloop.counter|stringformat:"02d" }}</b>{{ challenge }}</li>{% endfor %}</ul>
+    </article>
+  </section>
+
+  <section class="case-gallery">
+    <div class="gallery-heading"><span>04 / SCREENSHOTS</span><h2>Inside the project</h2></div>
+    {% if screenshots %}
+    <div class="detail-gallery">
+      {% for image in screenshots %}
+      <figure>
+        <img src="{{ image }}" alt="{{ project.title }} screenshot {{ forloop.counter }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}" width="1280" height="720">
+        <figcaption>{{ project.title }} · View {{ forloop.counter|stringformat:"02d" }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="screenshots-pending"><b>Desktop walkthrough coming next.</b><p>This Java project is currently being prepared for a clean visual capture.</p></div>
+    {% endif %}
+  </section>
+
+  <section class="case-footer">
+    <div><span>NEXT STEP</span><h2>Have a project in mind?</h2></div>
+    <a href="{% url 'home' %}#contact">Start a conversation ↗</a>
+  </section>
+</main>
+
+<script src="{% static 'js/site.js' %}?v=6"></script>
+</body>
+</html>
