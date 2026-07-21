@@ -1,0 +1,53 @@
+:root {
+  --navy: #202923;
+  --navy2: #33443a;
+  --ivory: #f4efe6;
+  --paper: #fffaf3;
+  --blue: #2f6b4f;
+  --sky: #d96c4a;
+  --amber: #e9b44c;
+  --text: #202923;
+  --muted: #68736c;
+  --line: #d8d3c9;
+  --card: #ffffff;
+  --shadow: #29352e17;
+}
+
+html[data-theme="light"] {
+  --bg: #f4efe6;
+  --surface: #fffaf3;
+  --surface2: #e9eee8;
+  --text: #202923;
+  --muted: #68736c;
+  --line: #d8d3c9;
+  --card: #ffffff;
+  --shadow: #29352e17;
+}
+
+html[data-theme="dark"] {
+  --bg: #1d2520;
+  --surface: #26322b;
+  --surface2: #314139;
+  --text: #faf7f0;
+  --muted: #b1bbb4;
+  --line: #46564c;
+  --card: #2b3931;
+  --shadow: #00000066;
+}
+
+.page-glow { background: #d96c4a12; }
+.brand > b { background: linear-gradient(135deg, var(--blue), #7ca982); }
+.hero h1 em,
+.section-heading em,
+.about h2 em,
+.journey h2 em,
+.achievement-title em,
+.contact-copy em {
+  background: linear-gradient(90deg, var(--blue), var(--sky));
+  background-clip: text;
+  color: transparent;
+}
+.portrait-card { background: linear-gradient(145deg, #7ca982, var(--amber)); }
+.visual-1 { background: linear-gradient(135deg, #26352d, #4f8067); }
+.visual-2 { background: linear-gradient(135deg, #6d3d2f, #d96c4a); }
+.visual-3 { background: linear-gradient(135deg, #3b6b4f, #9abb82); }

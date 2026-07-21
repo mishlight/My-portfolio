@@ -25,7 +25,10 @@ setInterval(updateTime, 30000);
 const themeToggle = document.querySelector(".theme-toggle");
 const root = document.documentElement;
 const savedTheme = localStorage.getItem("portfolio-theme");
-if (savedTheme) root.dataset.theme = savedTheme;
+root.dataset.theme = savedTheme === "dark" ? "dark" : "light";
+if (themeToggle) {
+  themeToggle.querySelector("span").textContent = root.dataset.theme === "dark" ? "☼" : "☾";
+}
 themeToggle?.addEventListener("click", () => {
   root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
   localStorage.setItem("portfolio-theme", root.dataset.theme);

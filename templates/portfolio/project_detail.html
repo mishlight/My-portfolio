@@ -1,6 +1,6 @@
 {% load static %}
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -19,13 +19,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/style.css' %}?v=6">
-  <link rel="stylesheet" href="{% static 'css/project-detail.css' %}?v=1">
+  <link rel="stylesheet" href="{% static 'css/project-detail.css' %}?v=2">
+  <link rel="stylesheet" href="{% static 'css/palette.css' %}?v=1">
 </head>
 <body>
 <nav class="nav detail-nav">
   <a href="{% url 'home' %}" class="brand"><b>MS</b><span>Mishael Sellu<small>Developer · Sierra Leone</small></span></a>
   <a class="back-link" href="{% url 'home' %}#projects">← All projects</a>
-  <button class="theme-toggle" type="button" aria-label="Toggle color theme"><span>☼</span></button>
+  <button class="theme-toggle" type="button" aria-label="Toggle color theme"><span>☾</span></button>
 </nav>
 
 <main class="case-study">
