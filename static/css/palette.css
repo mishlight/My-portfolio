@@ -37,6 +37,36 @@ html[data-theme="dark"] {
 
 .page-glow { background: #d96c4a12; }
 .brand > b { background: linear-gradient(135deg, var(--blue), #7ca982); }
+.brand > .brand-logo,
+.footer-brand.brand-logo {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  flex: 0 0 auto;
+  border: 1px solid #d8d3c9;
+  background: #f4efe6;
+  box-shadow: 0 6px 18px #29352e16;
+}
+.brand > .brand-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+}
+.footer-brand.brand-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+}
+.brand-logo img {
+  position: absolute;
+  width: 110px;
+  max-width: none;
+  height: 110px;
+  left: 50%;
+  top: 49%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
 .hero h1 em,
 .section-heading em,
 .about h2 em,

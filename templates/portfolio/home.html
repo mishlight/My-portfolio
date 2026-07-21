@@ -19,7 +19,7 @@
   <meta name="twitter:description" content="Purposeful web, mobile, and data products from Freetown, Sierra Leone.">
   <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/mishael-og-cover.jpg' %}">
   <link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{% url 'home' %}">
-  <link rel="icon" href="{% static 'images/favicon.svg' %}" type="image/svg+xml">
+  <link rel="icon" href="{% static 'images/mishael-sellu-tech-logo.png' %}" type="image/png">
   <title>Mishael Sellu | Full-Stack Developer in Sierra Leone</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +31,7 @@
 <body>
 <div class="page-glow"></div>
 <nav class="nav">
-  <a href="#top" class="brand"><b>MS</b><span>Mishael Sellu<small>Developer · Sierra Leone</small></span></a>
+  <a href="#top" class="brand"><b class="brand-logo"><img src="{% static 'images/mishael-sellu-tech-logo.png' %}" alt="Mishael Sellu MS logo"></b><span>Mishael Sellu<small>Developer · Sierra Leone</small></span></a>
   <div class="nav-links"><a href="#projects">Projects</a><a href="#about">About</a><a href="#journey">Journey</a><a href="#contact">Contact</a></div>
   <div class="nav-actions">
     <button class="theme-toggle" type="button" aria-label="Toggle color theme"><span>☾</span></button>
@@ -163,7 +163,7 @@
     </div>
   </section>
 
-  <footer><div><a href="#top" class="footer-brand">MS</a><p>Full-stack developer building from Freetown, Sierra Leone.</p></div><div><a href="https://github.com/mishlight">GitHub ↗</a><a href="mailto:mishaelsellu68@gmail.com">Email ↗</a><a href="#top">Back to top ↑</a></div><span>© 2026 Mishael Sellu</span></footer>
+  <footer><div><a href="#top" class="footer-brand brand-logo"><img src="{% static 'images/mishael-sellu-tech-logo.png' %}" alt="Mishael Sellu MS logo"></a><p>Full-stack developer building from Freetown, Sierra Leone.</p></div><div><a href="https://github.com/mishlight">GitHub ↗</a><a href="mailto:mishaelsellu68@gmail.com">Email ↗</a><a href="#top">Back to top ↑</a></div><span>© 2026 Mishael Sellu</span></footer>
 </main>
 <script src="{% static 'js/site.js' %}?v=6"></script>
 </body>
